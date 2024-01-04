@@ -8,7 +8,8 @@ export const themeOptions = {
             main: '#f50057',
         },
         black: {
-            main: "hsl(0, 0%, 17%)"
+            main: "hsl(0, 0%, 17%)",
+            dark: "hsl(0, 0%, 27%)",
         }
     },
     typography: {

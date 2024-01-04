@@ -60,7 +60,6 @@ function App() {
           }}>
           <Typography variant='h4'>IP Address Tracker</Typography>
           <Box sx={{ width: { xs: '100%', sm: '80%' }, position: 'relative' }}>
-
             <TextField id="ip-adress" label="Search for any IP address or domain"
               fullWidth
               variant="outlined"
@@ -78,7 +77,10 @@ function App() {
             />
             <Button sx={{
               borderRadius: 0, borderTopRightRadius: '1em', borderBottomRightRadius: '1em',
-              position: 'absolute', right: 0, top: 0, bottom: 0
+              position: 'absolute', right: 0, top: 0, bottom: 0,
+              '& .MuiButton-root:hover': {
+                background: 'red'
+              }
             }}
               onClick={getLocationInformation}
               variant='contained' disableElevation color='black'><ArrowForwardIos /></Button>

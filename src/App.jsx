@@ -141,6 +141,12 @@ function App() {
             <RecenterAutomatically lat={locationInfo?.location.lat} lng={locationInfo?.location.lng} />
           </MapContainer>}
         </Box >
+        <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, width: 'max-content', background: 'white', zIndex: '500' }}>
+          <Typography fontSize='12px'>
+            Challenge by <a color='hsl(228, 45%, 44%)' rel='noreferrer' href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a color='hsl(228, 45%, 44%)' href="mailto:princegnakou@gmail.com">By Gatien GNAKOU-EDJAMBO</a>.
+          </Typography>
+        </Box>
       </div >
     </ThemeProvider >
 

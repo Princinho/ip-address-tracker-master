@@ -17,7 +17,7 @@ function App() {
   const dark = createTheme({ ...themeOptions, palette: { ...themeOptions.palette } })
   const informationsStyles = {
     flex: '1 1 auto', paddingBlock: { sm: '2em' },
-    borderRight: { sm: `1px solid ${lightGrey}` }, width: '20%'
+    borderRight: { sm: `1px solid ${lightGrey}` }, width: { sm: '20%' }
   }
   const [isLoading, setIsloading] = useState(false)
   const [ipAdress, setIpAdress] = useState('')
@@ -95,7 +95,7 @@ function App() {
               padding: { xs: '1em', sm: '2em' }, width: { xs: '100%', sm: '80%' }, borderRadius: '1em',
 
             }}>{isLoading ? <h1>Loading...</h1> :
-              <Stack direction={{ sm: "row" }} justifyContent={{ sm: 'space-around' }} gap={{ xs: '1em', sm: 0 }}>
+              <Stack direction={{ sm: "row" }} justifyContent={{ xs: 'center', sm: 'space-around' }} alignItems={{ xs: 'center' }} gap={{ xs: '1em', sm: 0 }}>
                 <Stack alignItems='center' sx={informationsStyles} >
                   <SmallTitle variant='subtitle2'>IP Adress</SmallTitle>
                   <BigTitle variant='body1'>{locationInfo?.ip || "-"}</BigTitle>

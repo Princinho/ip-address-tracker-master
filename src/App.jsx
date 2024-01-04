@@ -30,7 +30,14 @@ function App() {
   const BigTitle = (props) => (<Typography variant='h3' sx={{
     color: darkGrey, fontSize: '1em', fontWeight: 'bold'
   }}>{props.children}</Typography>)
-
+  const RecenterAutomatically = ({ lat, lng }) => {
+    const map = useMap();
+    console.log([lat, lng])
+    useEffect(() => {
+      map.setView([lat, lng]);
+    }, [lat, lng]);
+    return null;
+  }
   async function getLocationInformation() {
     let info = await getIpLocation(ipAdress)
     console.log(info)
@@ -40,6 +47,7 @@ function App() {
     async function getInfo() { getLocationInformation() }
     getInfo()
   }, [])
+
   return (
 
     <ThemeProvider theme={dark}>
@@ -130,6 +138,7 @@ function App() {
                 If no IP is provided, yours is located by default.
               </Popup>
             </Marker>
+            <RecenterAutomatically lat={locationInfo?.location.lat} lng={locationInfo?.location.lng} />
           </MapContainer>}
         </Box >
       </div >

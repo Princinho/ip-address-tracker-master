@@ -1,5 +1,7 @@
 import { Box, Button, Paper, Stack, TextField, ThemeProvider, Typography, createTheme, useMediaQuery } from '@mui/material'
 import './App.css'
+import markerIconPng from "leaflet/dist/images/marker-icon.png"
+import { Icon } from 'leaflet'
 import bgImageMobile from "./assets/images/pattern-bg-mobile.png"
 import bgImageDesktop from "./assets/images/pattern-bg-desktop.png"
 import { themeOptions } from "./ThemeOptions"
@@ -121,7 +123,8 @@ function App() {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[locationInfo?.location.lat, locationInfo?.location.lng]}>
+            <Marker position={[locationInfo?.location.lat, locationInfo?.location.lng]}
+              icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })}>
               <Popup>
                 The given IP adress is located here.
                 If no IP is provided, yours is located by default.

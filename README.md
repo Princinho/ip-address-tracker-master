@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/assets/images/capture.jpeg)
+![](./src/assets/images/screenshot.jpeg)
 
 
 ### Links
@@ -96,7 +96,7 @@ the country code returned by the API by the country's name dynamically retrieved
 
 - Website - [Gatien GNAKOU-EDJAMBO](https://devgatien.netlify.app/)
 - Frontend Mentor - [@Princinho](https://www.frontendmentor.io/profile/Princinho)
-- LinkedIn - [@gatiengnakou](https://linkedin.com/in/gatiengnakou)
+- LinkedIn - [@gatiengnakou](https://www.linkedin.com/in/gatien-gnakou/)
 
 ## Acknowledgments
 

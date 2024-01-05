@@ -33,33 +33,31 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./src/assets/images/capture.jpeg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: (https://github.com/Princinho/ip-address-tracker-master)
+- Live Site URL: (https://ipsimple.netlify.app/)
 
 ## My process
-
+I started by splitting the viewport into the two main sections.
+The upper section with the image in background, and the second one which would contain the map later.
+I built the upper section first and then added the results panel, (The white section in the middle)
+I then added the map below but it was overlapping the results section. So I moved the results section into the same container as the map and then used absolute positionning and z-indexes to position them accordingly.
+Next, I connected the IPify API and made sure I was retrieving the data correctly. I then displayed the returned data in the results section.
+After that, I updated the map to display whatever location data is retrieved from the IPify API.
+It made the map bug as there is no location data at the first render so I had to unmount it while the data is fetching and then mount it when the data is available.
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Material UI](https://nextjs.org/) - React UI library that implements Google's Material Design
+- [Styled Components](https://mui.com/system/styled/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
@@ -67,49 +65,40 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
-To see how you can add code snippets, see below:
+I had used leaflet on a project in the past but this second experience helped me understand more concepts and 
+have a clearer idea of how its setup works.
+The map showed in sattered chunks at first but that was because the leaflet css wasn't correctly embedded
+The funny thing is that when I embedded the css, the map disappeared altogether. It really left me scratching my head.
+A couple searches later, I understood that I had to set a height on the map container.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+```jsx
+<MapContainer center={[locationInfo?.location.lat, locationInfo?.location.lng]}
+            zoom={13} scrollWheelZoom={true}
+            style={{
+              height: `calc(100vh - ${backgroundHeight})`,/*height is required or map wont show*/
+            }}>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+To go further, I would like to improve the map manipulation by increasing the zoom when an IP is located for instance. And maybe replace
+the country code returned by the API by the country's name dynamically retrieved from another API.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Adding dividers on flexbox items](https://stackoverflow.com/questions/41631136/add-dividing-line-between-flex-items-with-equal-space-distribution) - This helped me because I was confused when the borders I set to serve as a dividers were so close to the text.
+- [Fixing marker not showing issue](https://stackoverflow.com/questions/60174040/marker-icon-isnt-showing-in-leaflet) - I couldn't understand why the marker wouldn't show on the published site. This article helped a lot. 
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [Gatien GNAKOU-EDJAMBO](https://devgatien.netlify.app/)
+- Frontend Mentor - [@Princinho](https://www.frontendmentor.io/profile/Princinho)
+- LinkedIn - [@gatiengnakou](https://linkedin.com/in/gatiengnakou)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+Shout outs to all those StackOverflow users who keep sharing valuable information that keep us sane 😂
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

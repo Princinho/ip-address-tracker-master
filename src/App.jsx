@@ -125,7 +125,8 @@ function App() {
             </Paper>
           </Stack>
 
-          {locationInfo && <MapContainer center={[locationInfo?.location.lat, locationInfo?.location.lng]} zoom={13} scrollWheelZoom={true}
+          {locationInfo && <MapContainer center={[locationInfo?.location.lat, locationInfo?.location.lng]}
+            zoom={13} scrollWheelZoom={true}
             style={{
               height: `calc(100vh - ${backgroundHeight})`,/*height is required or map wont show*/
             }}>

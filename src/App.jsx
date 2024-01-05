@@ -23,7 +23,7 @@ function App() {
   const [ipAdress, setIpAdress] = useState('')
   const [locationInfo, setLocationInfo] = useState(null)
   let isSmallScreen = useMediaQuery(dark.breakpoints.down('sm'))
-  const backgroundHeight = isSmallScreen ? '18rem' : '15rem'
+  const backgroundHeight = isSmallScreen ? '18rem' : '17rem'
   const SmallTitle = (props) => (<Typography variant='h5' sx={{
     color: grey, fontSize: '.8em', fontWeight: 'bold', mb: '.2em', textTransform: 'uppercase'
   }}>{props.children}</Typography>)
